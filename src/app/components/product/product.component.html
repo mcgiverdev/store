@@ -1,0 +1,6 @@
+<app-images [images]="product.images"></app-images>
+<h2>{{ product.price | currency: 'PEN' }}</h2>
+<p><b>{{ product.title }}</b></p>
+<p>{{ product?.taxes | currency: 'PEN'}}</p>
+<button (click)="onShowDetail()">Ver detalle</button>
+<button (click)="onAddToCart()">Add Cart</button>

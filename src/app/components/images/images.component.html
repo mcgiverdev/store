@@ -1,0 +1,7 @@
+<!-- <div *ngFor="let img of images">
+  <app-img [img]="img"></app-img>
+</div> -->
+<app-img *ngIf="images.length > 0; else default" [img]="images[0]"></app-img>
+<ng-template #default>
+  <app-img></app-img>
+</ng-template>

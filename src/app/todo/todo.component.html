@@ -1,0 +1,83 @@
+<app-user></app-user>
+<h1>Formulario</h1>
+<form (ngSubmit)="onRegister()"  #myForm="ngForm" >
+  <div class="input-group">
+    <label for="name">Nombre</label>
+    <input type="text" required id="name" [(ngModel)]="register.name" name="name" #nameInput="ngModel">
+    <p>{{!nameInput.valid ? 'Ingrese el campo' : ''}}</p>
+  </div>
+  <div class="input-group">
+    <label for="email">Email</label>
+    <input type="email" required id="email" [(ngModel)]="register.email" name="email" #emailInput="ngModel">
+    <p>{{!emailInput.valid ? 'Ingrese el campo' : ''}}</p>
+  </div>
+  <div class="input-group">
+    <label for="password">Password</label>
+    <input type="text" required id="password" [(ngModel)]="register.password" name="password" #passwordInput="ngModel">
+    <p>{{!passwordInput.valid ? 'Ingrese el campo' : ''}}</p>
+  </div>
+  <button [disabled]="myForm.invalid" type="submit">Registrar</button>
+</form>
+{{ [1,2].reverse() }}
+<!-- <button (click)="openEdit()">{{ isEdit ? 'Ver' : 'Editar'}}</button>
+<br>
+<div *ngIf="!isEdit; else editBlock">
+  <h1>Me presento</h1>
+  <h3>Soy {{ person.name }}</h3>
+  <div [ngSwitch]="person.name">
+    <p *ngSwitchCase="'McGiver'">
+      Autorizado
+    </p>
+    <p *ngSwitchDefault>
+      No validado
+    </p>
+  </div>
+  <h3>Tengo {{person.age}}</h3>
+  <br>
+</div>
+<ng-template #editBlock>
+  <div>
+    <label for="name">Mi nombre</label>
+    <input type="text" [(ngModel)]="person.name" name="name"
+    required #nameInput="ngModel"/>
+    <p>Valid: {{nameInput.valid}}</p>
+  </div>
+  <div>
+    <label for="age">Mi edad</label>
+    <input type="number" [(ngModel)]="person.age" name="age"
+    required #ageInput="ngModel" min="18" max="30"/>
+    <p>Valid: {{ageInput.valid}}</p>
+  </div>
+</ng-template>
+<hr>
+<h2>Lista de tareas</h2>
+<ul >
+  <li *ngIf="tasks.length === 0">
+    No hay tareas
+  </li>
+  <li *ngFor="let task of tasks; index as i">
+    {{ i + 1}} {{task}} <button (click)="deleteTask(i)">Eliminar</button></li>
+</ul>
+<hr>
+<h2>Agregar nueva tarea</h2>
+<br>
+<input type="text" [(ngModel)]="task"
+required #taskInput="ngModel" (keyup.enter)="saveTask()">
+<button *ngIf="taskInput.valid" (click)="saveTask()">Agregar</button>
+
+ -->
+ <!-- <input type="text" required #nameInput="ngModel" [(ngModel)]="person.name">
+ <p class="message-error" [class.invalid] = "nameInput.invalid">
+   El campo es requerido
+ </p>
+ <p [style.font-style]="nameInput.valid ? 'italic' : 'normal'">Bien mano</p>
+ <input type="number" [(ngModel)]="width">
+ <img src="./assets/images/toy.jpg" [style.width.px]="width" alt="">
+<h2>Lista de pruductos</h2>
+<div class="products--grid">
+  <div *ngFor="let product of products">
+    <img [src]="product.image" alt="image">
+    <h2>{{ product.price}}</h2>
+    <p> {{ product.name}}</p>
+  </div>
+</div> -->
